@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import PersonCard from './components/PersonCard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="d-flex justify-content-center pt-3" >
+        <div class="d-flex flex-column">
+          <PersonCard  className="text-center" infoCard={formatCard(person1)}/>
+          <PersonCard  className="text-center" infoCard={formatCard(person2)}/>
+          <PersonCard  className="text-center" infoCard={formatCard(person3)}/>
+          <PersonCard  className="text-center" infoCard={formatCard(person4)}/>
+        </div>
+      </div>
     </div>
   );
 }
+
+const formatCard = (person) => {
+  return [person.lastName, person.firstName, person.age, person.hair];
+}
+
+const person1 = {
+  lastName: 'Doe',
+  firstName: 'Jane',
+  age: '45',
+  hair: 'Black'
+};
+
+const person2 = {
+  lastName: 'Smith',
+  firstName: 'John',
+  age: '88',
+  hair: 'Brown'
+};
+
+const person3 = {
+  lastName: 'Fillmore',
+  firstName: 'Millard',
+  age: '50',
+  hair: 'Brown'
+};
+
+const person4 = {
+  lastName: 'Smith',
+  firstName: 'Maria',
+  age: '62',
+  hair: 'Brown'
+};
 
 export default App;
